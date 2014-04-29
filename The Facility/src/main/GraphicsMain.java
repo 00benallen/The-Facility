@@ -88,7 +88,7 @@ public class GraphicsMain extends Canvas {
 	
 	private void drawBackground() {
 		g.setColor(Color.cyan);
-		g.fillRect(1, 0, WIDTH*SCALE, HEIGHT*SCALE);
+		g.fillRect(0, 0, WIDTH*SCALE, HEIGHT*SCALE);
 	}
 	private void drawWorld() {
 		WorldRenderer.renderWorld(Main.world1, g, viewX, viewY);
