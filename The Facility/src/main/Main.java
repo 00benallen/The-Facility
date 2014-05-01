@@ -70,17 +70,11 @@ public class Main implements Runnable{
 	}
 	
 	public void moveCamera() {
-		if(Listener.left) {
-			GraphicsMain.left();
-		}
-		if(Listener.right) {
+		if(player.getX() > GraphicsMain.WIDTH - GraphicsMain.WIDTH/4) {
 			GraphicsMain.right();
 		}
-		if(Listener.up) {
-			GraphicsMain.up();
-		}
-		if(Listener.down) {
-			GraphicsMain.down();
+		if(player.getX() < GraphicsMain.WIDTH/4) {
+			GraphicsMain.left();
 		}
 	}
 	
