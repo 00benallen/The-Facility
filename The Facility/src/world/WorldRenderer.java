@@ -31,35 +31,35 @@ public abstract class WorldRenderer {
 			firstRender = false;
 		}
 		
-		for(int x = 0; x < world.getWidth()/GraphicsMain.ZOOM; x++) {
-			for(int y = 0; y < world.getHeight()/GraphicsMain.ZOOM; y++) {
-				switch (world.getBlockSheet()[x+viewX][y+viewY]) {
+		for(int x = viewX/8; x < (viewX + GraphicsMain.WIDTH/GraphicsMain.ZOOM)/8; x++) {
+			for(int y = viewY/8; y < (viewY + GraphicsMain.HEIGHT/GraphicsMain.ZOOM)/8; y++) {
+				switch (world.getBlockSheet()[x][y]) {
 				case 1: {
-					g.drawImage(stoneImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, stoneImage.getWidth()/8*GraphicsMain.ZOOM, stoneImage.getHeight()/8*GraphicsMain.ZOOM, null);
+					g.drawImage(stoneImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, stoneImage.getWidth()/8*GraphicsMain.ZOOM, stoneImage.getHeight()/8*GraphicsMain.ZOOM, null);
 					break;
 				}
 				case 2: {
-					g.drawImage(dirtImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, dirtImage.getWidth()/8*GraphicsMain.ZOOM, dirtImage.getHeight()/8*GraphicsMain.ZOOM, null);
+					g.drawImage(dirtImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, dirtImage.getWidth()/8*GraphicsMain.ZOOM, dirtImage.getHeight()/8*GraphicsMain.ZOOM, null);
 					break;
 				}
 				case 3: {
-					g.drawImage(woodImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, woodImage.getWidth()/8*GraphicsMain.ZOOM, woodImage.getHeight()/8*GraphicsMain.ZOOM,null);
+					g.drawImage(woodImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, woodImage.getWidth()/8*GraphicsMain.ZOOM, woodImage.getHeight()/8*GraphicsMain.ZOOM,null);
 					break;
 				}
 				case 4: {
-					g.drawImage(leafImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, leafImage.getWidth()/8*GraphicsMain.ZOOM, leafImage.getHeight()/8*GraphicsMain.ZOOM,null);
+					g.drawImage(leafImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, leafImage.getWidth()/8*GraphicsMain.ZOOM, leafImage.getHeight()/8*GraphicsMain.ZOOM,null);
 					break;
 				}
 				case 5: {
-					g.drawImage(concreteImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, concreteImage.getWidth()/8*GraphicsMain.ZOOM, concreteImage.getHeight()/8*GraphicsMain.ZOOM,null);
+					g.drawImage(concreteImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, concreteImage.getWidth()/8*GraphicsMain.ZOOM, concreteImage.getHeight()/8*GraphicsMain.ZOOM,null);
 					break;
 				}
 				case 6: {
-					g.drawImage(concreteBackgroundImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, invalidImage.getWidth()/8*GraphicsMain.ZOOM, invalidImage.getHeight()/8*GraphicsMain.ZOOM,null);
+					g.drawImage(concreteBackgroundImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, invalidImage.getWidth()/8*GraphicsMain.ZOOM, invalidImage.getHeight()/8*GraphicsMain.ZOOM,null);
 					break;
 				}
 				case -1: {
-					g.drawImage(invalidImage, x*GraphicsMain.ZOOM, y*GraphicsMain.ZOOM, invalidImage.getWidth()/8*GraphicsMain.ZOOM, invalidImage.getHeight()/8*GraphicsMain.ZOOM,null);
+					g.drawImage(invalidImage, x*GraphicsMain.ZOOM*8, y*GraphicsMain.ZOOM*8, invalidImage.getWidth()/8*GraphicsMain.ZOOM, invalidImage.getHeight()/8*GraphicsMain.ZOOM,null);
 					break;
 				}
 				}

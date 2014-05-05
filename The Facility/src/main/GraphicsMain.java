@@ -9,6 +9,7 @@ import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 
+import player.Player;
 import world.WorldRenderer;
 
 public class GraphicsMain extends Canvas {
@@ -35,7 +36,21 @@ public class GraphicsMain extends Canvas {
 		
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);	
+		frame.setVisible(true);
+		
+		if((Main.player.getX() - (WIDTH/ZOOM)/2) > 0) {
+			viewX = (Main.player.getX() - (WIDTH/ZOOM)/2) ;
+		}
+		else {
+			viewX = 0;
+		}
+		
+		if((Main.player.getY() - (HEIGHT/ZOOM)/2) > 0) {
+			viewY = (Main.player.getY() - (HEIGHT/ZOOM)/2) ;
+		}
+		else {
+			viewY = 0;
+		}
 	}
 	
 	public static void left() {
@@ -95,7 +110,7 @@ public class GraphicsMain extends Canvas {
 		
 	}
 	private void drawPlayer() {
-		g.drawImage(Main.player.getImage(), Main.player.getX(), Main.player.getY(), Main.player.getImage().getWidth()*ZOOM, Main.player.getImage().getHeight()*ZOOM, null);
+		g.drawImage(Main.player.getImage(), (Main.player.getX() - viewX)*ZOOM, (Main.player.getY() - viewY)*ZOOM, Player.width/8*ZOOM, Player.height/8*ZOOM, null);
 	}
 
 }

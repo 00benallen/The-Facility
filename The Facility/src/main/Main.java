@@ -14,7 +14,7 @@ public class Main implements Runnable{
 	
 	public static Listener listener = new Listener();
 	
-	GraphicsMain graphicsMain = new GraphicsMain();
+	GraphicsMain graphicsMain;
 	
 	public static Player player;
 	
@@ -29,7 +29,8 @@ public class Main implements Runnable{
 	
 	private void init() {
 		world1 = WorldGenerator.createWorld(GraphicsMain.WIDTH*GraphicsMain.SCALE, GraphicsMain.HEIGHT*GraphicsMain.SCALE);
-		player = new Player(5, WorldGenerator.dirtBoundary);
+		player = new Player(5, WorldGenerator.dirtBoundary*8 - Player.height - 1);
+		graphicsMain = new GraphicsMain();
 	}
 
 	public void run() {

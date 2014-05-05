@@ -3,6 +3,7 @@ package world;
 import java.util.Random;
 
 public abstract class WorldGenerator {
+	
 	private static int[][] blockSheet;
 	public static int stoneBoundary, dirtBoundary;
 	private static final int tree[][] = {
@@ -38,7 +39,7 @@ public abstract class WorldGenerator {
 	private static void createDirt(int width, int height) {
 		
 		for(int x = 0; x < width; x++) {
-			for(int y = height - 2*(height/3) - 1; y > dirtBoundary; y--) {
+			for(int y = dirtBoundary + 1; y < stoneBoundary; y++) {
 				blockSheet[x][y] = World.DIRT;
 			}
 		}

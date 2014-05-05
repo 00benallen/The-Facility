@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 public class Player {
 	private int x, y, walkSpeed;
+	public static final int width = 8, height = 16;
 	BufferedImage image;
 	
 	public Player(int x, int y) {
